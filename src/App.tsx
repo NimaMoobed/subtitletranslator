@@ -56,9 +56,14 @@ function event(name: string, params: Record<string, string | number> = {}) {
   window.gtag?.("event", name, params);
 }
 
+function initialLocale(): "en" | "fa" {
+  const requested = new URLSearchParams(window.location.search).get("lang");
+  return requested === "fa" || window.location.pathname.split("/").includes("fa") ? "fa" : "en";
+}
+
 export default function App() {
   const fileInput = useRef<HTMLInputElement>(null);
-  const [locale, setLocale] = useState<"en" | "fa">("en");
+  const [locale, setLocale] = useState<"en" | "fa">(initialLocale);
   const [fileName, setFileName] = useState("");
   const [sourceText, setSourceText] = useState("");
   const [encoding, setEncoding] = useState("");

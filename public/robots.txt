@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://nimamoobed.github.io/subtitletranslator/sitemap.xml

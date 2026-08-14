@@ -3,6 +3,7 @@
 Translate `.srt` and text-based `.sub` subtitle files between languages without changing their timestamps. The project is public, browser-first, bilingual (English/Persian), and designed so people can use a free engine or bring their own translation provider.
 
 **Live app:** [nimamoobed.github.io/subtitletranslator](https://nimamoobed.github.io/subtitletranslator/)  
+**نسخه فارسی:** [nimamoobed.github.io/subtitletranslator/fa](https://nimamoobed.github.io/subtitletranslator/fa/)  
 **Created by:** [Nima Moobed](https://nmoobed.com/?utm_source=github&utm_medium=readme&utm_campaign=subshift)
 
 ## What it does
@@ -71,4 +72,3 @@ API عمومی، قانونی و واقعاً نامحدود برای Google Tra
 ## License
 
 [MIT](LICENSE)
-
