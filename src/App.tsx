@@ -1,4 +1,4 @@
-import { ChangeEvent, DragEvent, useMemo, useRef, useState } from "react";
+import { ChangeEvent, DragEvent, useEffect, useMemo, useRef, useState } from "react";
 import { buildSrt, Cue, decodeSubtitle, msToTimestamp, parseSubtitle, subtitleDuration } from "./lib/subtitles";
 import { ProviderId, providers, translateCues, TranslationStyle } from "./lib/providers";
 
@@ -82,6 +82,11 @@ export default function App() {
   const translatedCount = cues.filter((cue) => cue.translated).length;
   const isMicroDvd = format === "microdvd";
   const targetDir = rtlLanguages.has(targetLanguage) ? "rtl" : "ltr";
+
+  useEffect(() => {
+    document.documentElement.lang = locale;
+    document.documentElement.dir = locale === "fa" ? "rtl" : "ltr";
+  }, [locale]);
 
   const parsedCues = useMemo(() => {
     if (!sourceText) return cues;
@@ -226,4 +231,3 @@ export default function App() {
     </div>
   );
 }
-
